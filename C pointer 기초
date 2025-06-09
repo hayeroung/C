@@ -1,0 +1,109 @@
+// int get_integer(){
+//     int val;
+//     printf("정수를 입력하세요:");
+//     scanf("%d", &val);
+//     return val;
+// }
+
+// int power(int a,int b) {
+//     int c = 1;
+    
+//     for(int i = 0; i < b; i++) c *= a;
+    
+//     return c;
+// }
+
+// void printVal(int a){
+//     printf("제곱값은 %d", a);
+// }
+
+// int main()
+// {
+//     int x = get_integer();
+//     int y = get_integer();
+    
+//     int num = power(x,y);
+//     printVal(num);
+// }*/
+
+/*int main(void) {
+    int i = 10;
+    char c = 69;
+    float f = 12.3;
+    
+    printf("i의 주소 : %p %zu/n" ,&i , sizeof(i)); 
+    printf("c의 주소 : %p %zu/n" ,&c , sizeof(c));
+    printf("f의 주소 : %p %zu/n" ,&f , sizeof(f));
+    
+    return 0;
+}*/
+
+// int main(void) {
+//     int a = 10;
+//     int*ptr = &a;
+//     printf("%p/n",ptr);
+//     printf("%d",*ptr);
+// }
+
+/*int main(void) {
+    int a =0;
+    int* ptr;
+    int* ptra;
+    
+    ptr = &a;
+    *ptr = 1;
+    printf("%d, %d\n" , a ,*ptr);
+    
+    ptra = &a;
+    printf("%d, %d,%d\n",a,*ptr,*ptra);
+    
+    *ptra = 2;
+    printf("%d, %d,%d\n",a,*ptr,*ptra);
+    return 0;
+}
+
+int main(void) {
+    int i = 10;
+    int* ptr = &i;
+    printf("*ptr 값 : %d\n",*ptr);
+    
+    *ptr = i+5;
+    printf("i값 : %d\n",i);
+    
+    i = i+20;
+    printf("*ptr값 : %d\n", *ptr);
+}
+
+void CountInc1(int n){
+    n++;
+}//return을 하지 않아서 10
+
+void CountInc2 (int* n) {
+    (*n)++;
+}
+
+int main(){
+    int a = 10;
+    CountInc1(a);
+    printf("a값 : %d\n" ,a );
+    CountInc2(&a);
+    printf("a값 : %d" ,a );
+
+    
+    return 0;
+}*/
+
+void swap(int* a,int* b){
+    int tmp;
+    tmp = *a;
+    *a = *b;
+    *b = tmp;
+}
+int main() {
+    int x = 10 , y = 20;
+    swap(&x,&y);
+    printf("x = %d, y = %d",x,y);
+    return 0;
+}
+
+
