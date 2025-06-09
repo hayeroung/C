@@ -1,0 +1,99 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace BinaryTree
+{
+    class TreeNode
+    {
+        private int value;
+        private TreeNode left;
+        private TreeNode right;
+
+        public TreeNode(int _value, TreeNode _left, TreeNode _right)
+        {
+            this.value = _value;
+            this.left = _left;
+            this.right = _right;
+        }
+
+        //getter / setter
+        public int GetData()
+        { return value; }
+
+        public TreeNode GetLeft() { return left; }
+        public TreeNode GetRight() { return right; }
+    }
+
+    class Tree
+    {
+        TreeNode root;
+
+        public Tree(TreeNode _root)
+        {
+            this.root = _root;
+        }
+        //전위,중위,후위 순회 함수
+        public void Preorder(TreeNode _root)
+        {
+            if (_root != null) {
+                Console.Write(_root.GetData() + " ");
+                Preorder(_root.GetLeft());
+                Preorder(_root.GetRight());
+            }
+        }
+
+        public void Inorder(TreeNode _root)
+        {
+            if (_root != null) {
+                Inorder(_root.GetLeft());
+                Console.Write(_root.GetData() + " ");
+                Inorder(_root.GetRight());
+            }
+        }
+
+        public void Postorder(TreeNode _root)
+        {
+            if (_root != null) {
+                Postorder(_root.GetLeft());
+                Postorder(_root.GetRight());
+                Console.Write(_root.GetData()+" ");
+            }
+        }
+    }
+    internal class Program
+    {
+        static void Main(string[] args)
+        {//단말노드 level3
+            TreeNode n3 = new TreeNode(13,null,null);
+            TreeNode n4 = new TreeNode(32, null, null);
+            TreeNode n5 = new TreeNode(7, null, null);
+
+            //level2
+            TreeNode n1 = new TreeNode(12, n3, null);
+            TreeNode n2 = new TreeNode(35, n4, n5);
+
+            //level3 root
+            TreeNode n0 = new TreeNode(50, n1, n2);
+
+            Tree tree = new Tree(n0);
+
+            // 전위순회
+            tree.Preorder(n0);
+            Console.WriteLine("");
+
+            // 중위순회
+            tree.Inorder(n0);
+            Console.WriteLine("");
+
+            // 후위순회
+            tree.Postorder(n0);
+            Console.WriteLine("");
+
+        }
+    }
+}
+
+
