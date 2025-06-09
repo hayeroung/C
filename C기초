@@ -1,0 +1,79 @@
+    #include<stdio.h>
+    printf("Hello World");  
+    printf("%d\n",123);   //정수
+    printf("%f\n",12.34);  //실수
+    printf("%c\n",'A');   //문자
+    printf("%s\n","abc");  //문자열
+    printf("%c\n",'A','A');  //문자,정수
+
+
+    int n = 123;
+    printf("n = %d\n",n);
+    
+    float f = 3.14;
+    printf("f = %f\n",f);
+    
+    char ch = 'A';
+    printf("ch = %c\n",ch);
+    
+    char str[20];
+    strcpy(str,"Hello");
+    printf("str = %s\n",str);
+    
+        int num = -100;
+    printf("num : %d\n",num);
+    
+    unsigned int num1 = -100;
+    printf("num1 : %u",num1);  //쓰레기 값 unsigned는 -인식 x
+    
+        int num = 100;
+    int num1 = 200;
+    int sum = 0;
+    sum = num +num1;
+    printf("sum : %d\n",sum);
+    
+    short num2 = 32767;
+    num2 += 1;
+    printf("부호 있는 정수 :%d\n",num2)
+    
+        float a = 12.23;
+    double b = 56.78;
+    printf("a의 값은 %f/n",a);
+    printf("b의 값은 %lf\n",b);
+    
+    printf("a의 값은 %.2f\n",a);
+    printf("b의 값은 %.3lf\n",b);
+    
+        int height = 15.0;
+    int width = 3.0;
+    float area = height*width*0.5;
+    printf("삼각형 넓이는 %f",area);
+    
+        char a = 'f';
+    char b = 104;
+    printf("변수 a는 %c로 값이 %d다.\n",a,a);
+    printf("변수 b는 %d로 값이 %c다.\n",b,b);
+    
+    int c = 100;
+    int d = 200;
+    int num = c;
+    c = d;
+    d = num;
+    printf("c는 %d\n",c);
+    printf("d는 %d\n",d);
+
+#include<stdio.h> //입출력 라이브러리 헤더 필수!
+#define MAX 100
+
+int main(void) //main = 시작함수 : 하나만 존재 
+{
+    int num1 = MAX;
+    int num2 = MAX - 1;
+    int num3 = -MAX;
+    printf("num1 - %d\n",num1);
+    printf("num2 - %d\n",num2);
+    printf("num3 - %d\n",num3);
+    
+    printf("MAX = %d\n",MAX);
+    return 0;
+}
