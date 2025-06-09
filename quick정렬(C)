@@ -1,0 +1,83 @@
+using System;
+
+namespace ConsoleApp1
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            int[] list = { 5, 3, 8, 4, 9, 1, 6, 2, 7 };
+
+            Console.WriteLine("정렬 전");
+            for (int i = 0; i < list.Length; i++)
+            {
+                Console.Write(list[i] + " ");
+            }
+           
+            Console.WriteLine();
+
+            quick_sort(list, 0, list.Length - 1);
+
+            Console.WriteLine("정렬 후");
+            for (int i = 0; i < list.Length; i++)
+            {
+                Console.Write(list[i] + " ");
+            }
+        }
+
+        static void quick_sort(int[] list, int left, int right)
+        {
+            //피봇을 기준 정렬,분할
+            //피봇 위치 반환
+            if (left < right)
+            {
+                int pivot_loc = partition(list, left, right);
+                //똑같은 작업
+                quick_sort(list, left, pivot_loc - 1); //피봇 왼쪽
+                quick_sort(list, pivot_loc + 1, right);  //피봇 오른쪽
+            }
+        }
+        static int partition(int[] list, int left, int right)
+        {
+            //피봇을 기준 정렬,분할
+            //피봇 위치 반환
+            int low, high;
+            int pivot;
+            int temp; //값 교환용
+
+            low = left;
+            high = right + 1;
+            pivot = list[left];
+
+            //큰 값 찾기,low
+            do
+            {
+                do
+                {
+                    low++;
+                } while (pivot > list[low] && low < right); //high???
+                                                            //작은 값 찾기,high
+                do
+                {
+                    high--;
+                } while (pivot < list[high] && high > left);
+
+                //값 교환
+                if (low < high)
+                {
+                    temp = list[low];
+                    list[low] = list[high];
+                    list[high] = temp;
+                }
+            } while (low < high); //partition 끝 
+            
+            temp = list[high];
+            list[high] = pivot;
+            list[left] = temp;
+
+            return high;
+        }
+    }
+}
+
+
