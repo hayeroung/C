@@ -1,0 +1,87 @@
+1. 구조체 배열을 이용한 성적 처리
+< 출력물 > 
+3 명의 학생 정보를 입력하세요.
+이름 : 김양영
+국어, 영어, 수학 점수 : 90 80 95
+이름 : 박수근
+국어, 영어, 수학 점수 : 70 90 100
+이름 : 장원영
+국어, 영어, 수학 점수 : 80 95 85
+
+이름 국어 영어 수학 평균
+김양영  90  80  95  88.33
+박수근  70  90 100  86.67
+장원영  80  95  85  86.67
+
+#include <stdio.h>
+#define MAX_STUDENT 3 
+? student{
+    ? name[20];     //변수 name 타입
+    ? korean;        //변수 타입
+    ? english;        //변수 타입
+    ? math;          //변수 타입
+    ? average;        //변수 타입
+} ;
+int main(void) 
+{ 
+    ? ? std[?];        //구조체 student 변수 std 선언
+    int i;      
+    printf("%d 명의 학생 정보를 입력하세요.\n",  ? );   // 학생 인원 정보 출력
+    ?( i = 0 ; i < ? ; i++ )
+    {
+        printf("이름 : ");
+ 	scanf("%s", ?);
+ 	printf("국어, 영어, 수학 점수 : ");
+ 	scanf("%d %d %d",  ? ,  ?,  ?);
+        std[i].average = ?  ? / 3;
+    }
+     printf("\n이름 국어 영어 수학 평균\n");
+     ?( i = 0 ; i < ? ; i++ )
+     {
+        printf("%s %3d %3d %3d %6.2f\n", ? ? ? ? ?);
+     }
+    return 0;
+}
+
+
+2. 여러 개의 4지 선다형 문제를 저장하고 있다가 사용자에게 출력하고 사용자로부터 입력을 받아서 정답 여부를 출력해주는 프로그램을 작성해보자. 
+< 출력 >
+임베디드 장치에 가장 적합한 프로그래밍 언어는?   2
+1. Python   2. Java   3. C   4. Javascript   
+틀렸습니다.
+
+서로 다른 자료형을 모을 수 있는 구조는?  3
+1. 배열   2. 변수   3. 구조체   4. 포인터   
+맞았습니다. 
+
+#include<stdio.h>
+#define SIZE 100
+struct QUESTION {
+        char question[SIZE];
+        char item1[SIZE];
+        char item2[SIZE];
+        char item3[SIZE];
+        char item4[SIZE];
+        int solution;
+};
+? ? bank[100] = {
+        {"임베디드 장치에 가장 적합한 프로그래밍 언어는?", "1. Python", "2. Java",  "3. C",  "4. Javascript", 3 },
+        ? ,
+};
+int main(void)
+{        
+        int select, i;
+        for (? ; ? ; ?) {
+                printf("%s\n", ?);
+                printf("%s   ", ?);
+                printf("%s   ", ?);
+                printf("%s   ", ?);
+                printf("%s   ", ?);
+                scanf("%d", ?);
+                if (select == ?)
+                        ?
+                else
+                        ?
+        }
+        return 0;
+}
