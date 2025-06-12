@@ -1,0 +1,80 @@
+/******************************************************************************
+
+int main()
+{
+char code;
+char *p;
+p = &code;
+*p = 'D';
+printf("%c%c",code,*p);
+}
+
+int main(void)
+{
+int a;
+int *p;
+
+scanf("%d",&a);
+p = &a;
+
+printf("a = %d,&a = %p\n",a,&a);
+printf("*p = %d,p = %p\n",*p,p);
+}
+
+int main(void)
+{
+int arr[4] = {10,20,30,40};
+int *p;
+p = &arr[0]; 
+printf("%p\n", p+1);
+}
+
+int main(void)
+{
+int a[] = {5,10,15,20,25};
+int *p = a;
+for(int i=0; i<5; i++){
+    printf("%d" ,a[i]);
+    printf("%d" ,p[i]);
+    printf("%d" ,*(p+i));  //값
+    printf("%p\n" ,p+i);   //주소소
+}
+return 0;
+}
+
+int main(void)
+{
+    char *Pstr[] = {"english", "math","korean"};
+    char subject[][8] = {"english", "math","korean"};
+    int i;
+    printf("포인터 배열 이용 문자열 출력\n");
+    for(i=0;i<3;i++)
+        printf("%s\n",Pstr[i]);
+        
+    printf("이차원 배열 이용 문자열 출력\n");
+    for(i=0;i<3;i++)
+        printf("%s\n",subject[i]);
+    return 0;
+}
+
+int main(void)
+{
+    int i,n;
+    char *fruits[] = {
+        "apple",
+        "blueberry",
+        "orange",
+        "melon"};
+    n = sizeof(fruits)/sizeof(fruits[0]);
+    for(i=0; i<n; i++)
+        printf("%s\n",fruits[i]);
+        
+    return 0;
+    }
+*******************************************************************************/
+#include <stdio.h>
+
+int main(void)
+{
+    
+    }
